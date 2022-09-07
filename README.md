@@ -1,0 +1,1 @@
+# Autotest-with-fixture-and-generator
