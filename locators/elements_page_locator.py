@@ -31,3 +31,24 @@ class RadioButtonPagesLocators:
    NO_RADIOBUTTON = (By.CSS_SELECTOR, 'label[class^="custom-control"][for="noRadio"]')
    IMPRESSIV_RADIOBUTTON = (By.CSS_SELECTOR, 'label[class^="custom-control"][for="impressiveRadio"]')
    OUTPUT_RESULT = (By.CSS_SELECTOR, 'p span[class="text-success"]')
+
+class  WebTablesPagesLocators:
+    # person
+    ADD_BUTTON =(By.CSS_SELECTOR, 'button[id="addNewRecordButton"]')
+    FIRSTNAME_INPUT =(By.CSS_SELECTOR, 'input[id="firstName"]')
+    LASTNAME_INPUT =(By.CSS_SELECTOR, 'input[id="lastName"]')
+    AGE_INPUT = (By.CSS_SELECTOR, 'input[id="age"]')
+    EMAIL_INPUT =(By.CSS_SELECTOR, 'input[id="userEmail"]')
+    SALARY_INPUT =(By.CSS_SELECTOR, 'input[id="salary"]')
+    DEPARTMENT_INPUT =(By.CSS_SELECTOR, 'input[id="department"]')
+    SUBMIT_BUTTON =(By.CSS_SELECTOR, 'button[id="submit"]')
+
+    # table
+    FULL_PEOPLE_LIST = (By.CSS_SELECTOR, 'div[class="rt-tr-group"]')
+    SEARCH_INPUT = (By.CSS_SELECTOR, 'input[id="searchBox"]')
+    BUTTON_DELETE = (By.CSS_SELECTOR, 'span[title="Delete"]')
+    ROW_PARENT = ".//ancestor::div[@class='rt-tr-group']"
+    UPDATE_BUTTON = (By.CSS_SELECTOR, 'span[title="Edit"]')
+    NO_ROWS_FOUND = (By.CSS_SELECTOR, 'div[class="rt-noData"]')
+    COUNT_ROW_LIST =(By.CSS_SELECTOR, 'select[aria-label="rows per page"]')
+
