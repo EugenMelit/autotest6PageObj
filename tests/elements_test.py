@@ -1,6 +1,7 @@
 import random
 import time
-from pages.elements_page import TextBoxPages, CheckBoxPages, RadioButtonPages, WebTablePages
+from pages.elements_page import TextBoxPages, CheckBoxPages, RadioButtonPages, WebTablePages, ButtonsPages, LinksPages, \
+    UploadAndDownloadPage
 
 
 class TestElements:
@@ -90,4 +91,48 @@ class TestElements:
             web_table_page.open()
             count = web_table_page.select_up_to_some_rows()
             assert count == [5, 10, 25, 50, 100], "The number of rows has not been change"
+
+    class TestButtons:
+        def test_different_click_on_the_button(self, driver):
+            button_page = ButtonsPages(driver, 'https://demoqa.com/buttons')
+            button_page.open()
+            double = button_page.click_on_different_button('double')
+            right = button_page.click_on_different_button('right')
+            click = button_page.click_on_different_button('click')
+            print(double)
+            print(right)
+            print(click)
+            assert double == 'You have done a double click', 'The double click button was not present'
+            assert right == 'You have done a right click''The right click button was not present'
+            assert click == 'You have done a dynamic click','The  dynamic button was not present'
+
+    class TestLinks:
+
+        def test_check_link(self,driver):
+            link_page = LinksPages(driver, 'https://demoqa.com/links')
+            link_page.open()
+            link_href, current_url = link_page.check_new_tab_simple_links()
+            assert link_href == current_url
+
+
+        def test_check_broken_link(self,driver):
+            link_page = LinksPages(driver, 'https://demoqa.com/links')
+            link_page.open()
+            response_code = link_page.check_broken_links('https://demoqa.com/bad-request')
+            assert response_code == 400
+
+    class TestUploadAndDownLoad:
+        def test_upload_file(self, driver):
+            upload_page = UploadAndDownloadPage(driver,'https://demoqa.com/upload-download')
+            upload_page.open()
+            file_name, result = upload_page.upload_file()
+            assert file_name == result, 'The file has not been uploaded'
+
+
+
+        def test_dowlad_file(self, driver):
+            upload_page = UploadAndDownloadPage(driver, 'https://demoqa.com/upload-download')
+            upload_page.open()
+            check = upload_page.download_file()
+            assert check is True, 'The file has not been downloaded'
 

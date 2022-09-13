@@ -52,3 +52,22 @@ class  WebTablesPagesLocators:
     NO_ROWS_FOUND = (By.CSS_SELECTOR, 'div[class="rt-noData"]')
     COUNT_ROW_LIST =(By.CSS_SELECTOR, 'select[aria-label="rows per page"]')
 
+class ButtonsPagesLocators:
+    DOUBLE_BUTTON = (By.CSS_SELECTOR, 'button[id="doubleClickBtn"]')
+    RIGHT_CLICK_BUTTON = (By.CSS_SELECTOR, 'button[id="rightClickBtn"]')
+    CLICK_BUTTON = (By.XPATH, '//div[3]/button')
+    # result
+
+    SUCCESS_DOUBLE = (By.CSS_SELECTOR,'p[id="doubleClickMessage"]')
+    SUCCESS_RIGHT = (By.CSS_SELECTOR, 'p[id="rightClickMessage"]')
+    SUCCESS_CLICK = (By.CSS_SELECTOR, 'p[id="dynamicClickMessage"]')
+
+class LinksPageLocators:
+    SIMPLE_lINK = (By.CSS_SELECTOR, 'a[id="simpleLink"]')
+    BAD_REQUEST_LINK = (By.CSS_SELECTOR, 'a[id="bad-request"]')
+
+class  UploadAndDownloadPageLocators:
+    UPLOAD_FILE = (By.CSS_SELECTOR, 'input[id="uploadFile"]')
+    UPLOADED_FILE = (By.CSS_SELECTOR, 'p[id="uploadedFilePath"]')
+
+    DOWNLOAD_FILE = (By.CSS_SELECTOR, 'a[id="downloadButton"]')
