@@ -2,6 +2,8 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait as wait
 
 from selenium.webdriver.support import expected_conditions as EC
+
+
 class BasePage:
     def __init__(self, driver, url):
         self.driver = driver
@@ -12,7 +14,7 @@ class BasePage:
 
 
     def element_is_visible(self, locator, timeout=5):
-        # self.go_to_element(self.element_is_present(locator))
+        self.go_to_element(self.element_is_present(locator))
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
     def elements_are_visible(self, locator, timeout=5):
@@ -37,6 +39,14 @@ class BasePage:
         action = ActionChains(self.driver)
         action.double_click(element)
         action.perform()
+
+    def action_drag_and_drop_by_offset(self, element, x_coords, y_coords):
+        action = ActionChains(self.driver)
+        action.drag_and_drop_by_offset(element, x_coords, y_coords)
+        action.perform()
+
+
+
 
     def action_right_click(self, element):
         action = ActionChains(self.driver)
